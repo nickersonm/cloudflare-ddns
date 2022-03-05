@@ -16,7 +16,7 @@ AUTH_KEY="<apikey>"       # Relevant Cloudflare API key
 
 ## DNS record settings (required)
 DNS_ZONE="<domainzone>"   # Cloudflare zone ID; retreive from the "Overview" tab of the domain dashboard
-DNS_RECORDS=""            # Record(s) to point to this IP, in the form of `[sub.]domain.tld`
+DNS_RECORDS="<[sub.]domain.tld>"            # Record(s) to point to this IP, in the form of `[sub.]domain.tld`
 
 ## Connection settings (defaults)
 IP_V="4"                  # IP version to check and update: (4 | 6)
