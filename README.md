@@ -43,9 +43,9 @@ IP_QUERY="https://icanhazip.com https://api.ip.sb/ip https://api64.ipify.org htt
 Use `cron`, `/etc/periodic/`, or similar to run regularly. For example:
 
 ```bash
-doas mv cloudflare-ddns.sh /etc/periodic/15m
-doas chown root:root /etc/periodic/15m/cloudflare-ddns.sh
-doas chmod 770 /etc/periodic/15m/cloudflare-ddns.sh         # Contains API key
+doas mv cloudflare-ddns.sh /etc/periodic/15min
+doas chown root:root /etc/periodic/15min/cloudflare-ddns.sh
+doas chmod 770 /etc/periodic/15min/cloudflare-ddns.sh         # Contains API key
 ```
 
 Errors are output to `stderr`, information is output to `stdout`.
