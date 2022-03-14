@@ -6,6 +6,7 @@ Dynamic DNS with Cloudflare
 
 POSIX shell script (also using `sed`); acquires current host's IP and updates specified Cloudflare DNS entries with the [Cloudflare API](https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records). Does not modify TTL or Proxy status.
 
+
 ## Install
 
 Clone this repository or just download [`cloudflare-ddns.sh`](https://github.com/nickersonm/cloudflare-ddns/raw/main/cloudflare-ddns.sh) and configure.
@@ -16,6 +17,7 @@ Example:
 wget https://raw.githubusercontent.com/nickersonm/cloudflare-ddns/main/cloudflare-ddns.sh
 nano cloudflare-ddns.sh
 ```
+
 
 ## Configuration
 
@@ -43,9 +45,11 @@ IP_QUERY="https://icanhazip.com https://api.ip.sb/ip https://api64.ipify.org htt
 Use `cron`, `/etc/periodic/`, or similar to run regularly. For example:
 
 ```bash
+sh cloudflare-ddns.sh   # Run once
+
+chmod 770 cloudflare-ddns.sh         # Contains API key
 doas mv cloudflare-ddns.sh /etc/periodic/15min
 doas chown root:root /etc/periodic/15min/cloudflare-ddns.sh
-doas chmod 770 /etc/periodic/15min/cloudflare-ddns.sh         # Contains API key
 ```
 
 Errors are output to `stderr`, information is output to `stdout`.
